@@ -32,6 +32,18 @@ Technite "Advanced Kalman Filtering and Sensor Fusion" course. The student works
   https://claude.ai/artifact/7S1a5tzvoWgLcuTvurmCLg
 Notation used in reports: sigma_x^2 (position var), sigma_v^2 (velocity var), sigma_xv (their link), sigma_a (ACCEL_STD).
 
+## Repo / git state
+- Committed locally on `main`: prediction + GPS update steps, CLAUDE.md, `.claude/skills/lkf-exercise`.
+- `git push` to `origin` (SneilBit/AKFSF-Simulation-CPP) failed with 403: git authenticates as `TeensyBit`, which has no write
+  access. Fix: `gh auth login`/`gh auth switch` as SneilBit, or grant TeensyBit access. `upstream` is technitute (read-only for us).
+- The two exercise PDFs are deliberately untracked (course material); add only if the user asks.
+- Report figure scripts (matplotlib/PIL) lived in the session scratchpad and are not in the repo.
+
+## Gotchas
+- Pylance "not accessed" warnings come from unused stub arguments (gyro, dataset, map, meas); harmless.
+- RMSE readout on screen is per-axis X/Y, heading (deg), velocity; docs report quotes combined sqrt(X^2+Y^2).
+- Profiles 3/4 RMSE stays ~20 m with a constant-velocity model whatever the INIT_* values; larger ACCEL_STD or a turn model is needed.
+
 ## Working preferences
 - Explain intuitively from basics, with a figure or animation per concept; use proper symbols, never a/b/c.
 - Do not implement the next exercise step unless asked (user goes step by step following the PDF).

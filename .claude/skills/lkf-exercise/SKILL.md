@@ -16,3 +16,6 @@ description: Implement and verify a step of the Technite LKF exercise PDFs in py
 5. Report measured numbers, and say what is still a stub (GPS init branch, lidar).
 6. If asked for a report, extend the Claude Docs artifact in CLAUDE.md: matplotlib figures/GIFs -> Artifact asset upload
    -> `create blob` -> insert `![alt](blob/<id>)`; use sigma symbols and label every term.
+7. Git: commit only the code, CLAUDE.md and `.claude/`; leave exercise PDFs untracked unless asked. If `git push` returns 403,
+   do not work around it: tell the user the authenticated account (`gh auth status`) lacks write access to `origin`.
+8. Update CLAUDE.md "Exercise status" and measured numbers after each completed step.
